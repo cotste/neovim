@@ -3,11 +3,21 @@
 local set = vim.opt
 local cmd = vim.cmd
 local o = vim.o
+local map = vim.api.nvim_set_keymap
 
 -- All the plugins
 require('plugins')
 
-vim.g.leader = ' '
+-- Mappings
+map('n', '<Space>', '', {})
+vim.g.mapleader = ' '
+
+options = { noremap = true }
+
+map( 'n', '<leader><esc>', ':nohlsearch<cr>', options)
+map( 'n', '<C-n>', ':NvimTreeToggle<cr>', options)
+map( 'n', '<leader>gg', ':Git<cr>', options)
+
 
 -- Some basic options
 set.clipboard = 'unnamedplus'
@@ -26,6 +36,7 @@ require('telescope').setup {
     project = {
       base_dirs = {
 	      {'~/winhome/repos/expd', max_depth = 4},
+        {'~/.config', max_depth = 2},
       }
     }
   }

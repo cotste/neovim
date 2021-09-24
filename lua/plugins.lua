@@ -13,10 +13,18 @@ return require('packer').startup(function()
 
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+--    run = ':TSUpdate'
   }
 
   use 'nvim-telescope/telescope-project.nvim'
+
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+
+  use 'tpope/vim-fugitive'
+
 
 end)
 
