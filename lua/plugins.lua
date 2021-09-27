@@ -18,13 +18,24 @@ return require('packer').startup(function()
 
   use 'nvim-telescope/telescope-project.nvim'
 
+  use 'nvim-telescope/telescope-fzy-native.nvim'
+
+  use 'neovim/nvim-lspconfig'
+  
   use {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons'
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function() require'nvim-tree'.setup {} end
   }
 
   use 'tpope/vim-fugitive'
 
+  use {
+    'akinsho/bufferline.nvim', 
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
+
+  use 'karb94/neoscroll.nvim'
 
 end)
 
